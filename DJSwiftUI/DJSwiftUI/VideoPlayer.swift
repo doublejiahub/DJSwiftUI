@@ -8,7 +8,7 @@
 import SwiftUI
 import AVKit
 
-struct SUIVideoPlayer: View {
+struct ImmersionVideoPlayer: View {
     private let player = AVPlayer(url: URL(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8")!)
     
     var body: some View {
@@ -24,8 +24,8 @@ struct SUIVideoPlayer: View {
     }
 }
 
-struct SUIVideoPlayer_Previews: PreviewProvider {
+struct ImmersionVideoPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        SUIVideoPlayer()
+        ImmersionVideoPlayer()
     }
 }

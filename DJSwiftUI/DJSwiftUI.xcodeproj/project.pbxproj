@@ -17,6 +17,7 @@
 		1B6C33992680A568002125D5 /* DJSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C33982680A568002125D5 /* DJSwiftUIUITests.swift */; };
 		1B6C33A72680AD38002125D5 /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C33A62680AD38002125D5 /* VideoPlayer.swift */; };
 		1B6C33A92680B690002125D5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C33A82680B690002125D5 /* LoginView.swift */; };
+		1B6C33AE26833996002125D5 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C33AD26833996002125D5 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1B6C339A2680A568002125D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B6C33A62680AD38002125D5 /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
 		1B6C33A82680B690002125D5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1B6C33AD26833996002125D5 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				1B6C337A2680A567002125D5 /* ContentView.swift */,
 				1B6C33A82680B690002125D5 /* LoginView.swift */,
 				1B6C33A62680AD38002125D5 /* VideoPlayer.swift */,
+				1B6C33AD26833996002125D5 /* Helpers.swift */,
 				1B6C337C2680A568002125D5 /* Assets.xcassets */,
 				1B6C33812680A568002125D5 /* LaunchScreen.storyboard */,
 				1B6C33842680A568002125D5 /* Info.plist */,
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B6C33A72680AD38002125D5 /* VideoPlayer.swift in Sources */,
+				1B6C33AE26833996002125D5 /* Helpers.swift in Sources */,
 				1B6C33772680A567002125D5 /* AppDelegate.swift in Sources */,
 				1B6C33792680A567002125D5 /* SceneDelegate.swift in Sources */,
 				1B6C33A92680B690002125D5 /* LoginView.swift in Sources */,
