@@ -9,10 +9,15 @@ import SwiftUI
 
 /// 基础 view
 struct LoginViewII: View {
-   
-    @State private var username: String = ""
-    @State private var password: String = ""
-    @State private var isLoginTap: Bool = false
+       
+    private var userBinding: Binding<User> {
+        $store.appState.user
+    }
+    
+    @EnvironmentObject var store: Store
+    private var appState: AppState {
+        store.appState
+    }
 
     var body: some View {
         VStack {
@@ -25,7 +30,7 @@ struct LoginViewII: View {
             }
             .padding(.top, 30)
             
-            TextField("手机号或邮箱", text: $username)
+            TextField("手机号或邮箱", text: userBinding.username)
                 .frame(height: 46)
                 .padding(.top, 15)
                  //.textFieldStyle(RoundedBorderTextFieldStyle())
@@ -33,14 +38,15 @@ struct LoginViewII: View {
                 .frame(height: 1.0, alignment: .bottom)
                 .foregroundColor(Color(.systemGray4))
 
-            SecureField("密码", text: $password)
+            SecureField("密码", text: userBinding.password)
                 .frame(height: 46)
             Rectangle()
                 .frame(height: 1.0, alignment: .bottom)
                 .foregroundColor(Color(.systemGray4))
             
             Button {
-                self.isLoginTap = true
+                self.store.executeAction(action: .login(username: appState.user.username, password: appState.user.password))
+
             } label: {
                 Text("登录")
                     .frame(width: UIScreen.main.bounds.size.width - 60, height: 40, alignment: .center)
@@ -51,16 +57,19 @@ struct LoginViewII: View {
                     .padding(.top, 30)
             }
             .disabled(!isLoginEnabled)
-            .fullScreenCover(isPresented: $isLoginTap) {
+            .fullScreenCover(isPresented: $store.appState.loggedOn) {
                 VideoViewI()
             }
 
         }
         .padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
+        .alert(item: $store.appState.loginError) { error in
+            Alert(title: Text(error.description))
+        }
     }
     
     var isLoginEnabled: Bool {
-        return !self.username.isEmpty && !self.password.isEmpty
+        return !appState.user.username.isEmpty && !appState.user.password.isEmpty
     }
         
 }
