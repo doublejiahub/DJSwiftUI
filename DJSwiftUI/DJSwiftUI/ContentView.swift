@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        LoginView()
-            .padding()
+        VStack {
+            LoginViewI()
+            Spacer()
+        }
 //        ImmersionVideoPlayer()
     }
 }
